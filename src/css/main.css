@@ -1,0 +1,254 @@
+:root {
+  --avatar-pfp1: url(/src/img/cat1.png);
+  --dots: url(/src/img/dots.png);
+  --sea-green: #009688;
+  --gray-0: #ededed;
+  --gray-1: #e6e6e6;
+  --gray-2: #dddbd1;
+  --search-div: #f6f6f6;
+  --shadow: 0, 0, 0;
+  --border-mid: rgba(0, 0, 0, 0.08);
+  --talk-bg: #e5ddd5;
+  --talk-bg-doodles: url(/src/img/bg_whats.png);
+  --talk-border: rgba(0,0,0,0.03);
+  --icons-color: #929292;
+  --white-rgb: 255,255,255;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 790px;
+  padding: 0;
+  margin: 0;
+  overflow-y: hidden;
+  box-sizing:border-box;     
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  background-color: var(--gray-2);
+  background-image: linear-gradient(180deg, var(--sea-green)16%,
+                                           #dddbd1 16.01%,
+                                           #d2dbdc 100%);
+  position: relative;
+}
+
+
+.main-window {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  box-shadow: 0 1px 1px 0 rgba(var(--shadow),.06),
+              0 2px 5px 0 rgba(var(--shadow),.2);
+}
+/*
+=============== Section Messages, Profile, etc... ===============
+*/
+.msg-history {
+  position: relative;
+  flex: 35%;
+  overflow: hidden;
+  z-index: 200;
+  height: 100%;
+  background-color: white;
+}
+
+.header1 {
+  position: relative;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  flex: none;
+  z-index: 200;
+  width: 100%;
+  height: 8.5%;
+  max-height: 59px;
+  background-color: var(--gray-0);
+}
+
+.pfp-wrapper {
+  flex-grow: 1;
+}
+
+.pfp-bubble {
+  display: flex;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: var(--avatar-pfp1) no-repeat;
+  background-position-x: 46%;
+  background-size: 70px;
+}
+
+.sup-icons {
+  display: flex;
+}
+
+.icons-right {
+  display: flex;
+  align-items: center;
+}
+
+.stories-icon {
+  position: relative;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* background-color: yellowgreen; */
+  margin: 8px;
+}
+
+.first-line {
+  display: block;
+  position: absolute;
+  top: 5px;
+  height: 45px;
+  width: 21px;
+  border-radius: 20%/100% 0 0;
+  
+}
+
+.bubble-wrapper {
+  display: flex;
+  position: relative;
+  margin: 8px;
+  cursor: pointer;
+}
+
+.talk-bubble {
+  z-index: 300;  
+  border-radius: 14%;
+  width: 18px;
+  height: 14px;
+  display: block;
+  background-color: var(--icons-color);
+}
+
+.line-top {
+  position: absolute;
+  display: block;
+  top: 3.5px;
+  left: 3.5px;
+  z-index: 500;
+  width: 10px;
+  height: 2px;
+  background-color: var(--gray-0);
+}
+
+.line-bottom {
+  position: absolute;
+  display: block;
+  top: 7.5px;
+  left: 3.5px;
+  z-index: 500;
+  width: 6.5px;
+  height: 1.9px;
+  background-color: var(--gray-0);
+}
+
+.speak-arrow {
+  position: absolute;
+  display: block;
+  top: 12px;
+  z-index: 500;
+  width: 0;
+  height: 2px;
+  border-left: 5px solid var(--icons-color);
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.more-wrapper {
+  position: relative;
+  padding: 8px;
+  margin-left: 10px;
+}
+
+.dots {
+  display: flex;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background: var(--dots) center no-repeat;
+  cursor: pointer;
+}
+
+.search-div {
+  z-index: 200;
+  width: 100%;
+  height: 49px;
+  background-color: var(--search-div);
+  border-bottom: 1px solid var(--border-mid);
+}
+
+/*
+=============== Section Conversation Tab ===============
+*/
+
+.open-tab {
+  display: relative;
+  overflow: hidden;
+  z-index: 99;
+  flex: 65%;
+  height: 100%;
+  background-color: var(--talk-bg);
+
+}
+
+.header2 {
+  position: relative;
+  background-color: var(--gray-0);
+  border-left: 1px solid var(--border-mid);
+  height: 8.5%;
+  max-height: 59px;
+  width: 100%;
+  z-index: 400;
+}
+
+.header2::after {
+  position: absolute;
+  z-index: 400;
+  width: 100%;
+  height: 1px;
+  bottom: -1px;
+  background-color: rgba(var(--white-rgb),.14);
+  border-bottom: 1px solid var(--border-mid);
+  content: "";
+}
+
+.talk-wind {
+  position: relative;
+  border-left: 1px solid var(--talk-border);
+  z-index: 50;
+  top: 0;
+  height: calc(100% - 291px);
+  width: 100%;
+}
+
+.doodles {
+  position: absolute;
+  width: 65%;
+  height: 100%;
+  background-image: var(--talk-bg-doodles);
+  z-index: 99;
+  opacity: 0.06;
+}
+
+
+.footer {
+  position: relative;
+  background-color: var(--gray-0);
+  border-left: 0.1px solid var(--border-mid);
+  bottom:0;
+  flex: 65%;
+  height: 8.905%;
+  max-height: 59px;
+  z-index: 200;
+}
